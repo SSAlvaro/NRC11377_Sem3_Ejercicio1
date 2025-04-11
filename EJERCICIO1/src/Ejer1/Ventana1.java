@@ -117,6 +117,7 @@ public class Ventana1 extends JFrame implements ActionListener {
 			{
 				textArea = new JTextArea();
 				scrollPane.setViewportView(textArea);
+				//Hello
 			}
 		}
 	}
