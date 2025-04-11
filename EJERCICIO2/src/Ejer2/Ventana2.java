@@ -117,6 +117,7 @@ public class Ventana2 extends JFrame implements ActionListener {
 		Conversor c=new Conversor(celcius);
 		Conversor km= new Conversor(kilometros);
 		Conversor seg= new Conversor(segundos, flag);
+		textArea.setText("");
 		textArea.append("Conversión de Celsius a Fahrenheit: "+c.Convertir(celcius));
 		textArea.append("\nConversión de Kilometros a Millas: "+km.Convertir(kilometros));
 		textArea.append("\nConversión de segundos a minutos y segundos: "+seg.Convertir(segundos, flag));
