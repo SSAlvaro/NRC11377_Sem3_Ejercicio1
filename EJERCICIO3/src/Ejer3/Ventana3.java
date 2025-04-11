@@ -103,7 +103,7 @@ public class Ventana3 extends JFrame implements ActionListener {
 		String nom = txtObjeto.getText();
 		int sueldo = Integer.parseInt(txtSueldo.getText());
 		if (nom.matches("[a-zA-Z]+")) {
-		    Contador c = new Contador(nom);
+		    Contador c = new Contador(nom, sueldo);
 		    textArea.setText("");
 		    textArea.append("Se ingresó: " + nom + "\n"
 		                  + "La cantidad aumentó en +" + c.Cantidad()+"\n"
