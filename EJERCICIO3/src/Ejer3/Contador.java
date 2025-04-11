@@ -6,11 +6,9 @@ public class Contador {
     private static int SumaSueldo;
     private int sueldo;
     
-	public Contador(int sueldo) {
-		this.sueldo = sueldo;
-	}
-	public Contador(String nom) {
+	public Contador(String nom, int sueldo) {
 		this.nom = nom;
+		this.sueldo = sueldo;
 		cant++;
 	}
 	public int Cantidad() {
