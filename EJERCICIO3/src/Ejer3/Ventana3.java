@@ -25,6 +25,8 @@ public class Ventana3 extends JFrame implements ActionListener {
 	private JButton btnIngresar;
 	private JScrollPane scrollPane;
 	private JTextArea textArea;
+	private JLabel lblIngreseSueldo;
+	private JTextField txtSueldo;
 
 	/**
 	 * Launch the application.
@@ -79,6 +81,17 @@ public class Ventana3 extends JFrame implements ActionListener {
 				scrollPane.setViewportView(textArea);
 			}
 		}
+		{
+			lblIngreseSueldo = new JLabel("Ingrese sueldo:");
+			lblIngreseSueldo.setBounds(36, 19, 93, 14);
+			contentPane.add(lblIngreseSueldo);
+		}
+		{
+			txtSueldo = new JTextField();
+			txtSueldo.setColumns(10);
+			txtSueldo.setBounds(139, 16, 86, 20);
+			contentPane.add(txtSueldo);
+		}
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -88,11 +101,13 @@ public class Ventana3 extends JFrame implements ActionListener {
 	}
 	protected void do_btnIngresar_actionPerformed(ActionEvent e) {
 		String nom = txtObjeto.getText();
+		int sueldo = Integer.parseInt(txtSueldo.getText());
 		if (nom.matches("[a-zA-Z]+")) {
 		    Contador c = new Contador(nom);
 		    textArea.setText("");
 		    textArea.append("Se ingresó: " + nom + "\n"
-		                  + "La cantidad aumentó en +" + c.Cantidad());
+		                  + "La cantidad aumentó en +" + c.Cantidad()+"\n"
+		                  + "El sueldo total es: "+ c.CantidadSueldo(sueldo));
 		} else {
 		    JOptionPane.showMessageDialog(null, "Solo se permiten letras (sin espacios, números ni símbolos).", 
 		                                  "Entrada inválida", JOptionPane.ERROR_MESSAGE);
