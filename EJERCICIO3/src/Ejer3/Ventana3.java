@@ -7,11 +7,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
+import java.nio.file.attribute.AclEntry;
 import java.awt.event.ActionEvent;
 
 public class Ventana3 extends JFrame implements ActionListener {
@@ -85,10 +87,16 @@ public class Ventana3 extends JFrame implements ActionListener {
 		}
 	}
 	protected void do_btnIngresar_actionPerformed(ActionEvent e) {
-		String nom=txtObjeto.getText();
-		Contador c = new Contador(nom);
-		textArea.setText("");
-		textArea.append("Se ingreso: "+nom+"\n"
-				+ "La cantidad aumento en +"+c.Cantidad());
+		String nom = txtObjeto.getText();
+		if (nom.matches("[a-zA-Z]+")) {
+		    Contador c = new Contador(nom);
+		    textArea.setText("");
+		    textArea.append("Se ingresó: " + nom + "\n"
+		                  + "La cantidad aumentó en +" + c.Cantidad());
+		} else {
+		    JOptionPane.showMessageDialog(null, "Solo se permiten letras (sin espacios, números ni símbolos).", 
+		                                  "Entrada inválida", JOptionPane.ERROR_MESSAGE);
+		}
+		
 	}
 }
